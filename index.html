@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryptoBay - Home</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chart.js/3.7.0/chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="js/global.js" defer></script>
+    <script src="js/index.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <img src="Gray and Black Simple Studio Logo.png" alt="" class="hero-image1">            
+            <div class="logo">CryptoBay</div>
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="market.html">Markt</a></li>
+                <li><a href="coin-details.html">Coin Details</a></li>
+                <li><a href="login.html">Inloggen</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="animated-title">Welkom bij CryptoBay</h1>
+                <p>Uw one-stop platform voor alle cryptocurrency informatie en analyses.</p>
+                <div class="cta-buttons">
+                    <a href="#featured-coins" class="cta-button">Ontdek Coins</a>
+                    <a href="market.html" class="cta-button secondary">Bekijk Markt</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="Gray and Black Simple Studio Logo.png">
+            </div>
+        </section>
+
+        <section id="market-overview">
+            <h2>Markt Overzicht</h2>
+            <div class="market-stats">
+                <div class="stat-card">
+                    <h3>Totale Marktwaarde</h3>
+                    <p id="total-market-cap">Laden...</p>
+                </div>
+                <div class="stat-card">
+                    <h3>24u Volume</h3>
+                    <p id="total-volume">Laden...</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Bitcoin Dominantie</h3>
+                    <p id="btc-dominance">Laden...</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="portfolio-tracker">
+            <h2>Jouw Portfolio</h2>
+            <div id="portfolio-container">
+                <div class="portfolio-summary">
+                    <div id="portfolio-total">Totale waarde: €0.00</div>
+                    <div id="portfolio-change">24u Verandering: <span>0%</span></div>
+                </div>
+                <div id="portfolio-chart">
+                    <canvas id="portfolioChart"></canvas>
+                </div>
+                <div id="portfolio-list"></div>
+                <form id="add-coin-form">
+                    <select id="coin-select">
+                        <option value="">Selecteer een coin</option>
+                    </select>
+                    <input type="number" id="coin-amount" placeholder="Aantal" step="0.000001" min="0">
+                    <input type="number" id="purchase-price" placeholder="Aankoopprijs" step="0.01" min="0">
+                    <button type="submit">Toevoegen</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="featured-coins">
+            <h2>Uitgelichte Coins</h2>
+            <div class="coin-filters">
+                <button class="filter-btn active" data-filter="all">Alle</button>
+                <button class="filter-btn" data-filter="gainers">Stijgers</button>
+                <button class="filter-btn" data-filter="losers">Dalers</button>
+                <button class="filter-btn" data-filter="volume">Volume</button>
+            </div>
+            <div class="coin-grid">
+                <!-- Wordt gevuld door JavaScript -->
+            </div>
+        </section>
+
+        <section id="latest-news">
+            <h2>Laatste Nieuws</h2>
+            <div class="news-filters">
+                <button class="news-filter active" data-category="all">Alle</button>
+                <button class="news-filter" data-category="bitcoin">Bitcoin</button>
+                <button class="news-filter" data-category="ethereum">Ethereum</button>
+                <button class="news-filter" data-category="altcoins">Altcoins</button>
+            </div>
+            <div class="news-container">
+                <!-- Wordt gevuld door JavaScript -->
+            </div>
+            <button id="load-more-news" class="load-more">Meer Nieuws Laden</button>
+        </section>
+
+        <section id="price-alerts">
+            <h2>Prijs Alerts</h2>
+            <div class="alerts-container">
+                <form id="alert-form">
+                    <select id="alert-coin">
+                        <option value="">Selecteer Coin</option>
+                    </select>
+                    <select id="alert-condition">
+                        <option value="above">Boven</option>
+                        <option value="below">Onder</option>
+                    </select>
+                    <input type="number" id="alert-price" placeholder="Prijs" step="0.01" min="0">
+                    <button type="submit">Alert Instellen</button>
+                </form>
+                <div id="active-alerts">
+                    <!-- Wordt gevuld door JavaScript -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Over CryptoBay</h3>
+                <p>CryptoBay is uw betrouwbare bron voor cryptocurrency informatie en analyses.</p>
+                <div class="footer-contact">
+                    <p><i class="fas fa-envelope"></i> info@cryptobay.nl</p>
+                    <p><i class="fas fa-phone"></i> +31 (0)20 1234567</p>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Snelle Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="market.html">Markt</a></li>
+                    <li><a href="coin-details.html">Coin Details</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Volg Ons</h3>
+                <div class="social-icons">
+                    <a href="#" class="social-icon" title="Facebook">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="#" class="social-icon" title="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-icon" title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="social-icon" title="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+                <div class="newsletter">
+                    <h4>Schrijf je in voor onze nieuwsbrief</h4>
+                    <form id="newsletter-form">
+                        <input type="email" placeholder="E-mailadres" required>
+                        <button type="submit">Inschrijven</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="copyright">&copy; 2024 CryptoBay. Alle rechten voorbehouden.</p>
+            <div class="footer-links">
+                <a href="terms.html">Gebruiksvoorwaarden</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="disclaimer.html">Disclaimer</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+

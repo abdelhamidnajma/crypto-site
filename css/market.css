@@ -1,0 +1,144 @@
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.summary-card {
+    background-color: var(--secondary-bg);
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.summary-card:hover {
+    transform: translateY(-5px);
+}
+
+#coin-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+}
+
+#coin-table th, #coin-table td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid var(--secondary-bg);
+}
+
+#coin-table th {
+    background-color: var(--secondary-bg);
+    color: var(--accent-color);
+}
+
+#coin-table tr:hover {
+    background-color: rgba(255, 65, 54, 0.1);
+}
+
+#market-chart {
+    margin-top: 2rem;
+}
+
+#trendChart {
+    width: 100%;
+    height: 400px;
+}
+
+.positive {
+    color: #4caf50;
+}
+
+.negative {
+    color: #f44336;
+}
+
+@media (max-width: 768px) {
+    .summary-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #coin-table {
+        font-size: 0.9rem;
+    }
+}
+
+#search-section {
+    margin-bottom: 2rem;
+}
+
+.search-container {
+    display: flex;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#search-input {
+    flex-grow: 1;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid var(--secondary-bg);
+    border-radius: 4px 0 0 4px;
+    background-color: var(--primary-bg);
+    color: var(--primary-text);
+}
+
+#search-button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background-color: var(--accent-color);
+    color: var(--primary-text);
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#search-button:hover {
+    background-color: var(--hover-color);
+}
+
+.logo {
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    font-size: 24px;
+    font-weight: bold;
+    animation: bounce 1s infinite; /* Voegt de bounce animatie toe */
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0); /* Beginpositie */
+    }
+    40% {
+        transform: translateY(-20px); /* Stuiter omhoog */
+    }
+    60% {
+        transform: translateY(-10px); /* Stuiter iets minder omhoog */
+    }
+}
+
+
+
+.hero-image1 {
+    width: 50px; /* Pas de grootte aan zoals nodig */
+    height: 50px; /* Zorg ervoor dat de hoogte gelijk is aan de breedte voor een cirkel */
+    border-radius: 100%; /* Maak de afbeelding rond */
+    object-fit: cover; /* Zorg ervoor dat de afbeelding goed in de cirkel past */
+    animation: fadeIn 1s ease-in-out; /* Voeg animatie toe */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px); /* Begin iets hoger */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Eindig op de normale positie */
+    }
+}
+

@@ -1,0 +1,145 @@
+:root {
+    --primary-bg: #0a0e17;
+    --secondary-bg: #1a1f2b;
+    --primary-text: #ffffff;
+    --secondary-text: #b3b3b3;
+    --accent-color: #ff6b6b;
+    --hover-color: #ff8e8e;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--primary-bg);
+    color: var(--primary-text);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+header {
+    background-color: var(--secondary-bg);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: var(--primary-text);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover, nav ul li a.active {
+    color: var(--accent-color);
+}
+
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+h1, h2, h3 {
+    color: var(--accent-color);
+}
+
+.animated-title {
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+footer {
+    background-color: var(--secondary-bg);
+    color: var(--secondary-text);
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 0.5rem 0;
+    }
+}
+
+/* Theme toggle */
+#theme-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    color: var(--primary-text);
+}
+
+/* Light theme */
+body.light-theme {
+    --primary-bg: #ffffff;
+    --secondary-bg: #f0f0f0;
+    --primary-text: #333333;
+    --secondary-text: #666666;
+    --accent-color: #ff6b6b;
+    --hover-color: #ff8e8e;
+}
+
+.logo {
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    font-size: 24px;
+    font-weight: bold;
+    animation: bounce 1s infinite; /* Voegt de bounce animatie toe */
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0); /* Beginpositie */
+    }
+    40% {
+        transform: translateY(-20px); /* Stuiter omhoog */
+    }
+    60% {
+        transform: translateY(-10px); /* Stuiter iets minder omhoog */
+    }
+}
+
+.hero-image1 {
+    width: 50px; /* Pas de grootte aan zoals nodig */
+    height: 50px; /* Zorg ervoor dat de hoogte gelijk is aan de breedte voor een cirkel */
+    border-radius: 100%; /* Maak de afbeelding rond */
+    object-fit: cover; /* Zorg ervoor dat de afbeelding goed in de cirkel past */
+    animation: fadeIn 1s ease-in-out; /* Voeg animatie toe */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px); /* Begin iets hoger */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Eindig op de normale positie */
+    }
+}
+
